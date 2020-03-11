@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Participante.associate = function(models) {
-    // associations can be defined here
+    Participante.belongsToMany(models.Artigo, { through: ParticipanteArtigo, foreignKey: 'id' });
   };
 
   return Participante;
