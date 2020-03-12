@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const ParticipanteArtigo = sequelize.define('ParticipanteArtigo', {
-    participante_id: {
+  const RevisorArtigo = sequelize.define('RevisorArtigo', {
+    revisor_id: {
       allowNull: false,
       primaryKey: true,
       type: DataTypes.INTEGER,
@@ -10,13 +10,15 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
+    nota: DataTypes.FLOAT,
+    comentario: DataTypes.STRING,
   }, {
-    tableName: 'participante_artigo',
+    tableName: 'revisor_artigo',
   });
 
-  /* ParticipanteArtigo.associate = function(models) {
+  /* RevisorArtigo.associate = function(models) {
 
   }; */
 
-  return ParticipanteArtigo;
+  return RevisorArtigo;
 };

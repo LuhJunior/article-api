@@ -1,19 +1,18 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('participante_artigo', {
-      participante_id: {
-        type: Sequelize.INTEGER,
+    return queryInterface.createTable('revisor', {
+      revisor_id: {
         allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      participante_id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
         references: {
           model: 'participante',
-          key: 'id',
-        },
-      },
-      artigo_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'artigo',
           key: 'id',
         },
       },
@@ -24,10 +23,10 @@ module.exports = {
       updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
-      },
+      }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('participante_artigo');
+    return queryInterface.dropTable('revisor');
   },
 };
