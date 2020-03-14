@@ -1,6 +1,6 @@
 const faker = require('faker');
 const generator = require('creditcard-generator');
-const { Participante } = require('../../database/models');
+const { Participante, Revisor, Sequelize: { Op } } = require('../../database/models');
 const { create: createArtigo } = require('../artigo');
 const generatePdfFile = require('../../helpers/generatePdfFile');
 
@@ -34,10 +34,34 @@ async function generateData(qtd) {
       vencimento_cartao, marca_cartao,
     });
 
+    if (faker.random.boolean()) {
+      Revisor.create({ participante_id: participante.id });
+    }
+
     const resumo = faker.lorem.sentences();
     const file = await generatePdfFile();
 
-    await participante.addArtigo(await createArtigo({ resumo, file }));
+    const artigo = await createArtigo({ resumo, file });
+
+    await participante.addArtigo(artigo);
+
+    const revisores = await Revisor.findAll({
+      where: {
+        participante_id: {
+          [Op.ne]: participante.id,
+        },
+      },
+    });
+
+    const offset = faker.random.number(revisores.length);
+    revisores.slice(offset, offset + 5).forEach(async (revisor) => {
+      await revisor.addArtigo(artigo, {
+        through: {
+          nota: faker.random.number(10),
+          comentario: faker.lorem.sentence(10),
+        },
+      });
+    });
   }
 }
 

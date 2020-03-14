@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "npx nodemon src/server.js",
-    "test": "jest"
+    "test": "jest",
+    "migrate": "npx sequelize-cli db:migrate"
   },
   "author": "Cândido Júnior",
   "license": "MIT",
