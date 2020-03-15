@@ -21,17 +21,17 @@ function getById(id) {
 async function generateData(qtd) {
   for (let i = 0; i < qtd; i++) {
     const nome = faker.name.findName();
-    const endereco = faker.address.streetAddress(true);
-    const telefone = faker.phone.phoneNumber();
-    const email = faker.internet.email(nome.split(' ')[0]);
-    const local_emprego = faker.company.companyName();
-    const numero_cartao = generator.GenCC()[0];
-    const vencimento_cartao = vencimentoCartao();
-    const marca_cartao = faker.company.companyName();
-
+    console.log(faker.date.past());
     const participante = await create({
-      nome, endereco, telefone, email, local_emprego, numero_cartao,
-      vencimento_cartao, marca_cartao,
+      nome,
+      endereco: faker.address.streetAddress(true),
+      telefone: faker.phone.phoneNumber(),
+      email: faker.internet.email(nome.split(' ')[0]),
+      local_emprego: faker.company.companyName(),
+      numero_cartao: generator.GenCC()[0],
+      vencimento_cartao: vencimentoCartao(),
+      marca_cartao: faker.company.companyName(),
+      // created_at: faker.date.past(),
     });
 
     if (faker.random.boolean()) {
@@ -41,7 +41,7 @@ async function generateData(qtd) {
     const resumo = faker.lorem.sentences();
     const file = await generatePdfFile();
 
-    const artigo = await createArtigo({ resumo, file });
+    const artigo = await createArtigo({ resumo, file/* , created_at: faker.date.past() */ });
 
     await participante.addArtigo(artigo);
 

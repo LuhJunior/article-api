@@ -17,7 +17,6 @@ module.exports = async () => createPdfBinary({
 		header: {
 			fontSize: 18,
       bold: true,
-      
 		},
 	}
 });
