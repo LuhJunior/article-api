@@ -19,7 +19,7 @@ API para fazer inscrição de participantes e seleção de artigos.
 - [x] Criação serviços de consulta e cadastro
 - [x] Criação dos controllers e das rotas
 - [x] Rota para povoar o banco
-- [ ] Rota de extração de dados para o banco sqlite no Android
+- [x] Rotas de extração de dados para o banco sqlite no Android
 - [ ] ETL para o mongodb
 
 ## Como foi feito
