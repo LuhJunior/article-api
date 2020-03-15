@@ -34,8 +34,8 @@ async function findById(req, res, next) {
 
 async function generateParticipanteData(req, res, next) {
   try {
-    await generateData(req.body.qtd);
-    res.status(200).send({ ok: true, data: `${req.body.qtd} gerados com sucesso` });
+    const data = await generateData();
+    res.status(200).send({ ok: true, data });
   } catch (e) {
     return next(e);
   }

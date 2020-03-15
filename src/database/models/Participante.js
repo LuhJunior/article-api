@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     numero_cartao: DataTypes.STRING(30),
     vencimento_cartao: DataTypes.STRING(10),
     marca_cartao: DataTypes.STRING(10),
-    revisor: DataTypes.BOOLEAN,
   }, {
     tableName: 'participante',
   });

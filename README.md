@@ -26,7 +26,7 @@ API para fazer inscrição de participantes e seleção de artigos.
 
 ### Model, Migrations e Modelo Lógico
 
-As models e as migrations foram feitas usando a cli do sequelize basta usar o comando **model:generate** e seram criados dois arquivos a model na pastas de models e a migration na pasta das migrations.
+As models e as migrations foram feitas usando o [CLI do sequelize](https://github.com/sequelize/cli) basta usar o comando **model:generate** e seram criados dois arquivos a model na pastas de models e a migration na pasta das migrations.
 
 #### Exemplo de uso:
 ```
@@ -52,13 +52,9 @@ executadas no banco.
 ![](doc/modelo_logico.png)
 
 ### Povoamento
-A função de povoamento foi feita usando a biblioteca **faker** que vem com várias funções de geração de dados
-aleatórios para *nome*, *endereço*, *telefone*, *e-mail* etc. E para gerar o número do cartão de crédito foi 
-usada a biblioteca **creditcard-generator**.
+A função de povoamento foi feita usando a biblioteca [**faker**](https://github.com/marak/Faker.js/) que vem com várias funções de geração de dados aleatórios para *nome*, *endereço*, *telefone*, *e-mail* etc. E para gerar o número do cartão de crédito foi usada a biblioteca [**creditcard-generator**](https://github.com/VRMink/credit-card-generator).
 
-Para a geração dos artigos foi usado a biblioteca faker para gerar o texto e a biblioteca **pdfmake** para 
-gerar o pdf em binário. Cada artigo contém um título e dois parágrafos gerados pelo faker e depois é criado 
-o pdf usando a função **createPdfKitDocument** como podemos ver nos pedaços de código a seguir:
+Para a geração dos artigos foi usado a biblioteca faker para gerar o texto e a biblioteca [**pdfmake**](http://pdfmake.org) para gerar o pdf em binário. Cada artigo contém um título e dois parágrafos gerados pelo faker e depois é criado o pdf usando a função **createPdfKitDocument** como podemos ver nos pedaços de código a seguir:
 
 ```
 ...
@@ -73,17 +69,11 @@ const doc = printer.createPdfKitDocument(pdfDoc);
 ...
 ```
 
-Depois de inserir o participante e o artigo no banco de dados precisamos inserir as notas do artigo então
-pegamos do banco, se possível, cinco revisores e são geradas cinco notas aleatórias e um comentário.
+Depois de inserir o participante e o artigo no banco de dados precisamos inserir as notas do artigo então pegamos do banco, se possível, cinco revisores e são geradas cinco notas aleatórias e um comentário.
 
 ### Extração de dados
 
-Para a função de extração de dados para o sqlite temos que criar fazer uma paginação, pois não muitos
-registros para exportar. Então pegamos os primeiros ***n*** registros das tabelas começando de ***k*** até
-exportar todos os registros da tabela. O aplicativo **Android** terá que começar a importação pelas tabelas que não 
-possuem chaves estranheiras para não da erro de *foreign key* inexistente. Depois disso basta importar as tabelas 
-que possuem *foreign key*. No final teremos cinco rotas para exportar os dados de cada uma das tabelas.
-
+Para a função de extração de dados para o sqlite temos que criar fazer uma paginação, pois não muitos registros para exportar. Então pegamos os primeiros ***n*** registros das tabelas começando de ***k*** até exportar todos os registros da tabela. O aplicativo **Android** terá que começar a importação pelas tabelas que não possuem chaves estranheiras para não da erro de *foreign key* inexistente. Depois disso basta importar as tabelas que possuem *foreign key*. No final teremos cinco rotas para exportar os dados de cada uma das tabelas.
 
 ## Desafios
 

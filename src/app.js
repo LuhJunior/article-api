@@ -12,6 +12,7 @@ app.use(cors());
 
 app.use('/api/participante', routes.participante);
 app.use('/api/artigo', routes.artigo);
+app.use('/api/exportacao', routes.exportacao);
 
 app.use(errorMiddlewares.errorHandler);
 app.use(errorMiddlewares.notFoundHandler);

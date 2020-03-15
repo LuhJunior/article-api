@@ -5,9 +5,12 @@ const {
   findById,
 } = require('../app/artigo');
 
-Router.post('/', store);
+const { artigoValidator } = require('../middlewares/validators');
+const validationCheck = require('../middlewares/validationCheck');
+
+Router.post('/', artigoValidator.post, validationCheck, store);
 
 Router.get('/', findAll);
-Router.get('/:id', findById);
+Router.get('/:id', artigoValidator.get, validationCheck, findById);
 
 module.exports = Router;
