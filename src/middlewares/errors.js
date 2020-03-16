@@ -8,7 +8,7 @@ function errorHandler(err, req, res, next) {
 }
 
 function notFoundHandler(req, res) {
-  res.status(404).send({ message: 'Chora' });
+  res.status(404).send({ message: 'Rota não encontrada' });
 }
 
 module.exports = {
