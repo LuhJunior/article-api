@@ -42,7 +42,7 @@ function participanteTransform(data) {
 
 async function generateArtigoLote(lote, numeroRegistros) {
   try {
-    const artigos = artigoTransform(await Artigo.findAll({
+    const artigos = await Artigo.findAll({
       attributes: ['id', 'created_at'],
       include: [
         {
@@ -53,54 +53,60 @@ async function generateArtigoLote(lote, numeroRegistros) {
           required: true,
         }
       ],
-      offset: lote,
+      offset: lote * numeroRegistros,
       limit: numeroRegistros,
-    }));
+    });
 
-    await FatoArtigo.bulkCreate(artigos);
+    await FatoArtigo.bulkCreate(artigoTransform(artigos));
 
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
-      `Carga do lote: ${lote + 1} de artigos`,
-      `Status: Realizada com sucesso`,
+      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
+      `Carga do lote: ${lote + 1}`,
+      'Tabela: artigo',
+      'Status: Realizada com sucesso',
     ].join('\n'));
 
     return artigos.length;
   } catch (e) {
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`
-      `Carga do lote: ${lote + 1} de artigos`,
-      `Status: Falha ao salvar lote`,
+      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`
+      `Carga do lote: ${lote + 1}`,
+      'Tabela: artigo',
+      'Status: Falha ao salvar lote',
       `Detalhes: ${JSON.stringify(e)}`,
     ].join('\n'));
+    return 0;
   }
 };
 
 async function generateParticipanteLote(lote, numeroRegistros) {
   try {
-    const participantes = participanteTransform(await Participante.findAll({
+    const participantes = await Participante.findAll({
       raw: true,
       attributes: ['created_at'],
-      offset: lote,
+      offset: lote * numeroRegistros,
       limit: numeroRegistros,
-    }));
+    });
     
-    await FatoParticipante.bulkCreate(participantes);
+    await FatoParticipante.bulkCreate(participanteTransform(participantes));
 
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
-      `Carga do lote: ${lote + 1} de participantes`,
-      `Status: Realizada com sucesso`,
+      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
+      `Carga do lote: ${lote + 1}`,
+      'Tabela: participante',
+      'Status: Realizada com sucesso',
     ].join('\n'));
 
     return participantes.length;
   } catch (e) {
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
+      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
       `Carga do lote: ${lote + 1} de artigos`,
-      `Status: Falha ao salvar lote`,
+      'Tabela: de artigo',
+      'Status: Falha ao salvar lote',
       `Detalhes: ${JSON.stringify(e)}`,
     ].join('\n'));
+    return 0;
   }
 };
 
