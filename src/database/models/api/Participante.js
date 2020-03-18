@@ -14,12 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     numero_cartao: DataTypes.STRING(30),
     vencimento_cartao: DataTypes.STRING(10),
     marca_cartao: DataTypes.STRING(10),
+    created_at: DataTypes.DATE,
   }, {
     tableName: 'participante',
+    timestamps: false,
   });
 
   Participante.associate = function(models) {
-    Participante.belongsToMany(models.Artigo, { through: models.ParticipanteArtigo, foreignKey: 'participante_id' });
+    Participante.belongsToMany(models.Artigo, { through: models.ParticipanteArtigo, foreignKey: 'participante_id', as: 'Artigos' });
   };
 
   return Participante;

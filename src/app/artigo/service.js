@@ -1,7 +1,7 @@
 const { Artigo } = require('../../database/models');
 
-function create({ resumo, file }) {
-  return Artigo.create({ resumo, file });
+function create({ resumo, file, created_at }) {
+  return Artigo.create({ resumo, file, created_at });
 }
 
 function getAll() {

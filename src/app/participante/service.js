@@ -30,7 +30,7 @@ async function generateData() {
     numero_cartao: generator.GenCC()[0],
     vencimento_cartao: vencimentoCartao(),
     marca_cartao: faker.company.companyName(),
-    // created_at: faker.date.past(),
+    created_at: faker.date.past(faker.random.number(20)),
   });
 
   if (faker.random.boolean()) {
@@ -40,7 +40,7 @@ async function generateData() {
   const resumo = faker.lorem.sentences();
   const file = await generatePdfFile();
 
-  const artigo = await createArtigo({ resumo, file/* , created_at: faker.date.past() */ });
+  const artigo = await createArtigo({ resumo, file, created_at: faker.date.past(faker.random.number(20)) });
 
   await participante.addArtigo(artigo);
 

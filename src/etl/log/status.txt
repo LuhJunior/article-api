@@ -1,0 +1,58 @@
+Data: 2020-3-18 3:56:28
+Carga do lote: 201 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+Data: 2020-3-18 4:00:04
+Carga do lote: 201 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:00:45
+Carga do lote: 201 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:06:34
+Carga do lote: 201 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:07:00
+Carga do lote: 201 de participantes
+Status: Realizada com sucesso
+
+Data: 2020-3-18 4:13:26
+Carga do lote: 1 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:13:36
+Carga do lote: 2 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:13:46
+Carga do lote: 3 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:14:36
+Carga do lote: 4 de participantes
+Status: Realizada com sucesso
+
+Data: 2020-3-18 4:16:03
+Carga do lote: 1 de artigos
+Status: Falha ao salvar lote
+Detalhes: {"name":"SequelizeConnectionError","parent":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true},"original":{"errorno":"ETIMEDOUT","code":"ETIMEDOUT","syscall":"connect","fatal":true}}
+
+Data: 2020-3-18 4:16:08
+Carga do lote: 2 de participantes
+Status: Realizada com sucesso
+
+Data: Wed Mar 18 2020 04:19:11 GMT-0300 (GMT-03:00)
+Carga do lote: 1 de participantes
+Status: Realizada com sucesso
+
+Data: Wed Mar 18 2020 04:19:17 GMT-0300 (GMT-03:00)
+Carga do lote: 1 de artigos
+Status: Realizada com sucesso
