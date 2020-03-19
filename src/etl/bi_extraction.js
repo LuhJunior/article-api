@@ -60,7 +60,7 @@ async function generateArtigoLote(lote, numeroRegistros) {
     await FatoArtigo.bulkCreate(artigoTransform(artigos));
 
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
+      // `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
       `Carga do lote: ${lote + 1}`,
       'Tabela: artigo',
       'Status: Realizada com sucesso',
@@ -69,7 +69,7 @@ async function generateArtigoLote(lote, numeroRegistros) {
     return artigos.length;
   } catch (e) {
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`
+      // `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`
       `Carga do lote: ${lote + 1}`,
       'Tabela: artigo',
       'Status: Falha ao salvar lote',
@@ -91,7 +91,7 @@ async function generateParticipanteLote(lote, numeroRegistros) {
     await FatoParticipante.bulkCreate(participanteTransform(participantes));
 
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
+      // `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
       `Carga do lote: ${lote + 1}`,
       'Tabela: participante',
       'Status: Realizada com sucesso',
@@ -100,7 +100,7 @@ async function generateParticipanteLote(lote, numeroRegistros) {
     return participantes.length;
   } catch (e) {
     logger(path.join(__dirname, './log/bi_log.txt'), [
-      `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
+      // `Data: ${(new Date()).toDateString()} ${(new Date()).toTimeString()}`,
       `Carga do lote: ${lote + 1} de artigos`,
       'Tabela: de artigo',
       'Status: Falha ao salvar lote',

@@ -27,7 +27,7 @@ function insertMany(collection, data) {
 }
 
 const saveErr = (e, lote) => logger(path.join(__dirname, './log/mongo_log.txt'), [
-  `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
+  //`Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
   `Carga do lote: ${lote + 1}`,
   'Tabela: artigo',
   'Status: Falha ao salvar lote',
@@ -83,7 +83,7 @@ module.exports = async function generateParticipanteLote(lote, numeroRegistros) 
     client.close();
 
     logger(path.join(__dirname, './log/mongo_log.txt'), [
-      `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
+      // `Data: ${new Date().toDateString()} ${new Date().toTimeString()}`,
       `Carga do lote: ${lote + 1}`,
       `Tabela: participante`,
       `Status: Realizada com sucesso`,
