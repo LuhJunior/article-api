@@ -24,5 +24,10 @@ module.exports = {
     port: process.envDB_BI_PORT,
     dialect: process.env.DB_BI_DIALECT,
     logging: process.env.NODE_ENV === 'development' ? console.log : false,
+  },
+  mongo: {
+    user: process.env.MONGO_USER,
+    pass: process.env.MONGO_PASS,
+    cluster: process.env.MONGO_CLUSTER,
   }
 };
