@@ -49,7 +49,7 @@ function participanteTransform(data) {
     });
 
     artigos.push({
-      user_id: participante.dataValues.id,
+      participante_id: participante.dataValues.id,
       resumo: participante.Artigos[0].dataValues.resumo,
       file: participante.Artigos[0].dataValues.file,
     });

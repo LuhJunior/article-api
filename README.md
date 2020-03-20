@@ -12,6 +12,12 @@ API para fazer inscrição de participantes e seleção de artigos.
 * **GET** /artigo/:id - *Pega um artigo pelo id*
 * **POST** /artigo - *Criar um artigo*
 
+* **GET** /exportacao/artigo - *Pega todos os artigos com base nos parâmetros offset e limit passados na query*
+* **GET** /exportacao/participante - *Pega todos os participantes com base nos parâmetros offset e limit passados na query*
+* **GET** /exportacao/revisor - *Pega todos os revisores com base nos parâmetros offset e limit passados na query*
+* **GET** /exportacao/participante_artigo - *Pega todos os registros da tabela participante_artigo com base nos parâmetros offset e limit passados na query*
+* **GET** /exportacao/revisor_artigo - *Pega todos os registros da tabela revisor_artigo com base nos parâmetros offset e limit passados na query*
+
 ## Desenvolvimento
 
 - [x] Criação das migrations para criação do banco
@@ -20,7 +26,7 @@ API para fazer inscrição de participantes e seleção de artigos.
 - [x] Criação dos controllers e das rotas
 - [x] Rota para povoar o banco
 - [x] Rotas de extração de dados para o banco sqlite no Android
-- [ ] ETL para o mongodb
+- [x] ETL para o mongodb
 
 ## Como foi feito
 
